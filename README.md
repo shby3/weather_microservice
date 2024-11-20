@@ -1,4 +1,4 @@
-# weather_microservice
+# weather_microservice Communication Contract
 
 Import json and zmq in your program to REQUEST and RECEIVE data.
 
