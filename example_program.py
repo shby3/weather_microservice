@@ -1,4 +1,10 @@
+import json
 import zmq
+
+
+# APP_ID = id here
+UNITS = 'imperial'
+DEGREES = 'fahrenheit'
 
 
 # Create a zmq Context for creating sockets
@@ -14,9 +20,7 @@ socket.connect("tcp://localhost:5555")
 
 # If the user requests the service to stop set this to False
 service_running = [True]
-APP_ID = '42bbc13b105bb92ea654f5abcbadc895'
 required_params = ['lat', 'lon']
-UNITS = 'imperial'
 
 def set_param(message):
     """
@@ -86,10 +90,12 @@ while service_running[0]:
     socket.send_json(request)
     # Get the reply
     message = socket.recv()
+    message = message.decode()
+    data = json.loads(message)
     # Print the message
-    print(f"Server sent back: {message.decode()}")
+    print(f"Server sent back: {message}")
     if req_type == 'weather':
-        print(f"\n\nIt's ")
+        print(f"\n\nIt's {data['main']['temp']} degrees {DEGREES} out today.\n\n")
 
 # Stop the server
 socket.send_json({'req': 'STOP'})

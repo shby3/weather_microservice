@@ -1,6 +1,6 @@
 import zmq
 
-APP_ID = '42bbc13b105bb92ea654f5abcbadc895'
+# APP_ID = id here
 
 
 # Create a zmq Context for creating sockets
