@@ -2,7 +2,7 @@ import json
 import zmq
 
 
-# APP_ID = id here
+APP_ID = 0
 UNITS = 'imperial'
 DEGREES = 'fahrenheit'
 

@@ -1,6 +1,8 @@
+# Example calls to weather_server.py
+
 import zmq
 
-# APP_ID = id here
+APP_ID = 0
 
 
 # Create a zmq Context for creating sockets
