@@ -20,3 +20,6 @@ Example:
   data = json.loads(message)
   if req_type == 'weather':
      print(f"\n\nIt's {data['main']['temp']} degrees out today.\n\n")
+
+UML:
+![alt text](https://github.com/shby3/weather_microservice/uml.png?raw=true)
